@@ -184,7 +184,7 @@ resource "aws_autoscaling_group" "main" {
 resource "aws_autoscaling_policy" "main" {
   name                   = "${var.project}-${var.environment}-${var.component}"
   autoscaling_group_name = aws_autoscaling_group.main.name
-  cooldown = 120
+  # cooldown = 120
   policy_type            = "TargetTrackingScaling"
   target_tracking_configuration {
     predefined_metric_specification {
